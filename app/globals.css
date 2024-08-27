@@ -21,16 +21,41 @@ div {
 
 main {
   min-height: 100%;
-  background: linear-gradient(0deg, rgba(41, 41, 41, 1) 0%, rgba(60, 60, 60, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(41, 41, 41, 1) 0%,
+    rgba(60, 60, 60, 1) 100%
+  );
 }
 
 .button-border-gradient {
-  border: 1px solid linear-gradient(0deg, rgba(255, 76, 0, 1) 0%, rgba(255, 216, 0, 1) 100%);
-  color: linear-gradient(0deg, rgba(255, 76, 0, 1) 0%, rgba(255, 216, 0, 1) 100%);
+  border: 1px solid
+    linear-gradient(0deg, rgba(255, 76, 0, 1) 0%, rgba(255, 216, 0, 1) 100%);
+  color: linear-gradient(
+    0deg,
+    rgba(255, 76, 0, 1) 0%,
+    rgba(255, 216, 0, 1) 100%
+  );
 }
 
 .services-section {
   -webkit-box-shadow: 0px 0px 40px 1px #00000070;
   -moz-box-shadow: 0px 0px 40px 1px #00000070;
   box-shadow: 0px 0px 40px 1px #00000070;
+  background: rgb(41, 41, 41);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(41, 41, 41, 1) 35%,
+    rgba(60, 60, 60, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(41, 41, 41, 1) 35%,
+    rgba(60, 60, 60, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(41, 41, 41, 1) 35%,
+    rgba(60, 60, 60, 1) 100%
+  );
 }
