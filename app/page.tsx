@@ -6,6 +6,7 @@ import {
   ModelSearch,
   OurServices,
   Poster,
+  RepairedStat,
   Services,
 } from '@/shared/components/shared';
 
@@ -33,6 +34,11 @@ export default function Home() {
 
         <OurServices />
       </Container>
+      <section className="services-section">
+        <Container>
+          <RepairedStat />
+        </Container>
+      </section>
     </main>
   );
 }

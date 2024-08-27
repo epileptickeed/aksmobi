@@ -7,3 +7,4 @@ export { HowDoWeWork } from './HowDoWeWork/how-do-we-work';
 export { ModelSearch } from './model-search';
 export { ChooseYourModel } from './choose-your-model';
 export { OurServices } from './our-services';
+export { RepairedStat } from './repaired-stat';
