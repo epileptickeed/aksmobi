@@ -10,9 +10,14 @@ interface Props {
 
 export const Reviews: React.FC<Props> = ({ className }) => {
   return (
-    <div className={cn("py-32 flex flex-col items-center gap-12", className)}>
+    <div
+      className={cn(
+        "py-32 flex flex-col items-center gap-12 max-lg:py-8 max-lg:gap-0",
+        className
+      )}
+    >
       <Title text="Отзывы" size="xl" />
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-4 max-lg:flex-col max-lg:p-4">
         {reviews_data.map((item) => (
           <div
             key={item.id}

@@ -7,7 +7,12 @@ interface Props {
 
 export const CopyrightClaims: React.FC<Props> = ({ className }) => {
   return (
-    <div className={cn("flex items-center justify-between py-4", className)}>
+    <div
+      className={cn(
+        "flex items-center justify-between py-4 max-lg:flex-col-reverse",
+        className
+      )}
+    >
       <p className="text-[#BDBDBD] text-[12px]">
         Copyright 2020. Все права защищены
       </p>

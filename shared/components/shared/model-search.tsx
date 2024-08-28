@@ -12,7 +12,7 @@ export const ModelSearch: React.FC<Props> = ({ className }) => {
   return (
     <div
       className={cn(
-        "flex items-center justify-between w-full bg-[#1e1e1e] p-8 px-12 rounded-2xl",
+        "flex items-center justify-between w-full bg-[#1e1e1e] p-8 px-12 rounded-2xl max-lg:hidden",
         className
       )}
     >

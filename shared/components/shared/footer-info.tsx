@@ -8,12 +8,12 @@ interface Props {
 
 export const FooterInfo: React.FC<Props> = ({ className }) => {
   return (
-    <div className={cn("bg-[#1e1e1e] py-12", className)}>
+    <div className={cn("bg-[#1e1e1e] py-12 max-lg:p-4", className)}>
       <Container>
-        <h5 className="text-[#BDBDBD]">
+        <h5 className="text-[#BDBDBD] max-lg:text-[10px]">
           ИНФОРМАЦИЯ НА САЙТЕ НЕ ЯВЛЯЕТСЯ ПУБЛИЧНОЙ ОФЕРТОЙ
         </h5>
-        <p className="text-[#BDBDBD]">
+        <p className="text-[#BDBDBD] max-lg:text-[10px]">
           Продавец услуг оставляет за собой право в любое время вносить
           какие-либо изменения в данные предложения без предварительного
           уведомления. Информация на сайте не является публичной офертой до

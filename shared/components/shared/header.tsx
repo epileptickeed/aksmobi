@@ -1,10 +1,9 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
-import { Button } from '../ui';
-import { Menu, PhoneCallIcon } from 'lucide-react';
-import { NavSidebar } from './nav-sidebar';
-import { PhoneInfoSidebar } from './phone-info-sidebar';
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { Button } from "../ui";
+import { NavSidebar } from "./nav-sidebar";
+import { PhoneInfoSidebar } from "./phone-info-sidebar";
 
 export const Header: React.FC = () => {
   return (
@@ -13,16 +12,16 @@ export const Header: React.FC = () => {
 
       <div className="flex items-center justify-between gap-12">
         <Image
-          src={'/logo.png'}
+          src={"/logo.png"}
           alt="logo"
           width={200}
           height={50}
-          className="w-auto h-auto lg:p-4"
+          className="lg:p-4"
         />
         <div className="flex items-center justify-between gap-4 max-lg:hidden">
-          <Link href={'/'}>Наши услуги</Link>
-          <Link href={'/'}>Бренды</Link>
-          <Link href={'/'}>Отзывы</Link>
+          <Link href={"/"}>Наши услуги</Link>
+          <Link href={"/"}>Бренды</Link>
+          <Link href={"/"}>Отзывы</Link>
         </div>
       </div>
       <div className="flex items-center justify-around gap-8 max-lg:hidden">
@@ -31,6 +30,7 @@ export const Header: React.FC = () => {
           Доделать БАТОН
         </Button>
       </div>
+
       <PhoneInfoSidebar />
     </div>
   );
