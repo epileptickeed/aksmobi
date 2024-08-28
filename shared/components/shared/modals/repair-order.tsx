@@ -1,34 +1,44 @@
-import { cn } from "@/shared/lib/utils";
-import React from "react";
-import { Title } from "../title";
-import { X } from "lucide-react";
-import { FilterCheckbox } from "../filter-checkbox";
-import { Button } from "../../ui";
+'use clietn';
 
-interface Props {
-  className?: string;
-  focused: boolean;
-  setFocused: (value: boolean) => void;
+import React from 'react';
+import { FilterCheckbox } from '../filter-checkbox';
+import { Button } from '../../ui';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { FormSentSuccess } from './form-sent-success';
+import { Title } from '../title';
+import { setFocused } from '@/shared/redux/focusedSlice';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/shared/redux/store/store';
+import { useDispatch } from 'react-redux';
+
+interface FormType {
+  name: string;
+  phone: number;
+  comment?: string;
+  checkbox: boolean;
 }
 
-export const RepairOrder: React.FC<Props> = ({
-  className,
-  focused,
-  setFocused,
-}) => {
+export const RepairOrder: React.FC = () => {
+  const { focused } = useSelector((state: RootState) => state.focused);
+  const dispatch = useDispatch();
+  const { register, handleSubmit } = useForm<FormType>();
+  const [formSubmitted, setFormSubmitted] = React.useState(false);
+
+  const submit: SubmitHandler<FormType> = (data) => {
+    console.log(data);
+    dispatch(setFocused('success'));
+
+    setFormSubmitted(true);
+  };
+
+  if (formSubmitted) {
+    return <FormSentSuccess />;
+  }
+
   return (
     <>
-      {focused && (
-        <div
-          className={cn(
-            "bg-gradient-to-r from-[#292929] to-[#3c3c3c] overflow-hidden fixed top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 m-auto z-[40] bg-[#1e1e1e] min-h-[588px] max-w-[470px] rounded-2xl",
-            className
-          )}
-        >
-          <X
-            className="text-black cursor-pointer absolute right-2 top-2"
-            onClick={() => setFocused(false)}
-          />
+      {focused === 'repair' ? (
+        <>
           <div>
             <Title
               text="Заполните форму и с вами свяжутся в ближайшее время"
@@ -36,7 +46,9 @@ export const RepairOrder: React.FC<Props> = ({
               className="p-8 bg-gradient-to-r from-[#ff4c00] to-[#ffd800] text-center text-black font-bold"
             />
           </div>
-          <div className="flex flex-col justify-around flex-1 gap-8 p-8">
+          <form
+            onSubmit={handleSubmit(submit)}
+            className="flex flex-col justify-around flex-1 gap-8 p-8">
             <div className="flex flex-col">
               <label htmlFor="name" className="text-[#BDBDBD]">
                 ВАШЕ ИМЯ:
@@ -46,6 +58,7 @@ export const RepairOrder: React.FC<Props> = ({
                 type="text"
                 id="name"
                 placeholder="Иван"
+                {...register('name', { required: true })}
               />
             </div>
 
@@ -58,6 +71,7 @@ export const RepairOrder: React.FC<Props> = ({
                 type="number"
                 id="phone"
                 placeholder="+7 (000) 000-00-00"
+                {...register('phone', { required: true })}
               />
             </div>
 
@@ -77,15 +91,17 @@ export const RepairOrder: React.FC<Props> = ({
             <FilterCheckbox
               className=""
               text={
-                "Я соглашаюсь на обработку персональных данных и с политикой конфиденциальности"
+                'Я соглашаюсь на обработку персональных данных и с политикой конфиденциальности'
               }
-              value={"confirm"}
               name="confirm"
+              value="confirm"
             />
-            <Button className="font-bold py-7 rounded-3xl">Отправить</Button>
-          </div>
-        </div>
-      )}
+            <Button onSubmit={() => handleSubmit(submit)} className="font-bold py-7 rounded-3xl">
+              Отправить
+            </Button>
+          </form>
+        </>
+      ) : undefined}
     </>
   );
 };

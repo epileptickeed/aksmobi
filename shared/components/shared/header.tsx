@@ -1,29 +1,37 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import { Button } from "../ui";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import { Button } from '../ui';
+import { Menu, PhoneCallIcon } from 'lucide-react';
+import { NavSidebar } from './nav-sidebar';
+import { PhoneInfoSidebar } from './phone-info-sidebar';
 
-interface Props {
-  className?: string;
-}
-
-export const Header: React.FC<Props> = ({ className }) => {
+export const Header: React.FC = () => {
   return (
     <div className="flex items-center justify-between p-4">
+      <NavSidebar />
+
       <div className="flex items-center justify-between gap-12">
-        <Image src={"/logo.png"} alt="logo" width={200} height={50} />
-        <div className="flex items-center justify-between gap-4">
-          <Link href={"/"}>Наши услуги</Link>
-          <Link href={"/"}>Бренды</Link>
-          <Link href={"/"}>Отзывы</Link>
+        <Image
+          src={'/logo.png'}
+          alt="logo"
+          width={200}
+          height={50}
+          className="w-auto h-auto lg:p-4"
+        />
+        <div className="flex items-center justify-between gap-4 max-lg:hidden">
+          <Link href={'/'}>Наши услуги</Link>
+          <Link href={'/'}>Бренды</Link>
+          <Link href={'/'}>Отзывы</Link>
         </div>
       </div>
-      <div className="flex items-center justify-around gap-8">
+      <div className="flex items-center justify-around gap-8 max-lg:hidden">
         <p className="text-[28px] font-bold">+8 (343) 311-21-11</p>
-        <Button className=" border-white border-2 bg-none rounded-2xl px-12 py-8 [border-image:linear-gradient(to_top_right,#f6b73c,#4d9f0c)_30]">
+        <Button className="border-2 py-6 px-8 rounded-3xl border-white bg-none">
           Доделать БАТОН
         </Button>
       </div>
+      <PhoneInfoSidebar />
     </div>
   );
 };
