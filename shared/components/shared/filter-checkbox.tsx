@@ -1,6 +1,6 @@
-import React from "react";
-import { cn } from "@/shared/lib/utils";
-import { Checkbox } from "../ui";
+import React from 'react';
+import { cn } from '@/shared/lib/utils';
+import { Checkbox } from '../ui';
 
 interface Props {
   className?: string;
@@ -22,9 +22,7 @@ export const FilterCheckbox: React.FC<Props> = ({
   className,
 }) => {
   return (
-    <div
-      className={cn("flex items-center justify-between space-x-2", className)}
-    >
+    <div className={cn('flex items-center justify-between space-x-2', className)}>
       <Checkbox
         onCheckedChange={onCheckedChange}
         checked={checked}
@@ -34,8 +32,7 @@ export const FilterCheckbox: React.FC<Props> = ({
       />
       <label
         htmlFor={`checkbox-${String(name)}-${String(value)}`}
-        className="leading-none cursor-pointer flex-1"
-      >
+        className="leading-none cursor-pointer flex-1 max-lg:text-[12px]">
         {text}
       </label>
       {endAdornment}

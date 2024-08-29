@@ -13,14 +13,14 @@ export const FrameCard: React.FC<Props> = ({ className, text, imageUrl, id }) =>
   return (
     <div
       className={cn(
-        'flex flex-col items-center justify-between rounded-xl shadow-xl bg-[#1E1E1E] relative flex-1',
+        'flex flex-col items-center justify-between rounded-xl shadow-xl bg-[#1E1E1E] relative max-lg:p-4 max-lg:w-[200px] flex-1',
         className,
       )}>
       <div className="absolute shadow-xl p-1 flex items-center justify-center rounded-lg text-[24px] text-[#BDBDBD] font-bold w-[50px] h-[50px] top-[-7%] left-[-7%] bg-[#1E1E1E]">
         0{id + 1}
       </div>
       <Image
-        className="self-center p-2"
+        className="self-center p-2 pointer-events-none"
         src={imageUrl}
         alt="Уточняем проблему и проводим диагностику"
         width={210}

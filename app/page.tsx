@@ -11,9 +11,9 @@ import {
   OurServices,
   Poster,
   RepairedStat,
-  Reviews,
+  ReviewsCarousel,
   Services,
-} from "@/shared/components/shared";
+} from '@/shared/components/shared';
 
 export default function Home() {
   return (
@@ -44,23 +44,21 @@ export default function Home() {
 
       <Container>
         <InputsComponent
-          title={"Заберем ваш сломанный смартфон прямо из дома"}
-          text={"Оставьте Ваш номер телефона и мы перезвоним Вам прямо сейчас."}
+          title={'Заберем ваш сломанный смартфон прямо из дома'}
+          text={'Оставьте Ваш номер телефона и мы перезвоним Вам прямо сейчас.'}
         />
       </Container>
 
       <section className="services-section">
         <Container>
-          <Reviews />
+          <ReviewsCarousel />
         </Container>
       </section>
 
       <Container>
         <InputsComponent
-          title={"Нужна консультация?"}
-          text={
-            "Оставьте Ваш номер телефона и запишем вас на бесплатную консультацию."
-          }
+          title={'Нужна консультация?'}
+          text={'Оставьте Ваш номер телефона и запишем вас на бесплатную консультацию.'}
         />
       </Container>
       <FooterInfo />

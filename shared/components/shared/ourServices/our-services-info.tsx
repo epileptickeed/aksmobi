@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import { Title } from "../title";
+import React from 'react';
+import Image from 'next/image';
+import { Title } from '../title';
 
 export const OurServicesInfo: React.FC = () => {
   return (
@@ -16,16 +16,11 @@ export const OurServicesInfo: React.FC = () => {
             <p className="bg-gradient-to-r from-[#ff4c00] to-[#ffd800] text-[24px] font-bold inline-block text-transparent bg-clip-text">
               Разобрать на запчасти
             </p>
-            <Image
-              src={"/arrow-gradient.png"}
-              alt="arrow"
-              width={57}
-              height={10}
-            />
+            <Image src={'/arrow-gradient.png'} alt="arrow" width={57} height={10} />
           </div>
         </div>
         <Image
-          src={"/motherboard.png"}
+          src={'/motherboard.png'}
           alt="motherboard"
           width={345}
           height={288}
@@ -33,27 +28,22 @@ export const OurServicesInfo: React.FC = () => {
         />
       </div>
 
-      <div className="bg-[#1e1e1e] rounded-xl relative">
+      <div className="bg-[#1e1e1e] rounded-xl relative overflow-hidden">
         <div className="p-4 flex flex-col gap-4 justify-between h-full">
           <Title text="Ознакомится с более точными ценами" size="md" />
           <div className="flex items-center gap-6">
-            <Image
-              src={"/icons/phone-icon.png"}
-              alt="phone-icon"
-              width={20}
-              height={20}
-            />
+            <Image src={'/icons/phone-icon.png'} alt="phone-icon" width={20} height={20} />
             <p className="bg-gradient-to-r from-[#ff4c00] to-[#ffd800] text-[24px] font-bold inline-block text-transparent bg-clip-text">
               89610988111
             </p>
           </div>
         </div>
         <Image
-          src={"/broken-phone.png"}
+          src={'/broken-phone.png'}
           alt="broken-phone"
           width={215}
           height={200}
-          className="absolute z-[0] top-[10%] right-[-5%] max-lg:right-[-20%]"
+          className="absolute z-[0] top-0 right-[-5%] max-lg:right-[-20%]"
         />
       </div>
 
@@ -65,16 +55,11 @@ export const OurServicesInfo: React.FC = () => {
             <p className="bg-gradient-to-r from-[#ff4c00] to-[#ffd800] text-[24px] font-bold inline-block text-transparent bg-clip-text">
               Посмотреть
             </p>
-            <Image
-              src={"/arrow-gradient.png"}
-              alt="arrow"
-              width={57}
-              height={10}
-            />
+            <Image src={'/arrow-gradient.png'} alt="arrow" width={57} height={10} />
           </div>
         </div>
         <Image
-          src={"/zavod.png"}
+          src={'/zavod.png'}
           alt="zavod"
           width={648}
           height={346}

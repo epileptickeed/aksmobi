@@ -1,6 +1,7 @@
+'use client';
+
 import { cn } from '@/shared/lib/utils';
 import React from 'react';
-import { Title } from '../title';
 import { X } from 'lucide-react';
 import { RepairOrder } from './repair-order';
 import { ServicesOrder } from './services-order';
@@ -8,14 +9,30 @@ import { useSelector } from 'react-redux';
 import { RootState } from '@/shared/redux/store/store';
 import { setFocused } from '@/shared/redux/focusedSlice';
 import { useDispatch } from 'react-redux';
+import { FormSentSuccess } from './form-sent-success';
+import { ParsingOrder } from './parsing-order';
 
 interface Props {
   className?: string;
 }
 
+export interface FormType {
+  name: string;
+  phone: number;
+  comment?: string;
+  checkbox: boolean;
+}
+
 export const Modal: React.FC<Props> = ({ className }) => {
   const { focused } = useSelector((state: RootState) => state.focused);
+  const [formSubmitted, setFormSubmitted] = React.useState(false);
+  console.log(focused);
   const dispatch = useDispatch();
+  const closeModal = () => {
+    dispatch(setFocused(''));
+    setFormSubmitted(false);
+  };
+
   return (
     <>
       {focused && (
@@ -26,11 +43,14 @@ export const Modal: React.FC<Props> = ({ className }) => {
           )}>
           <X
             className="text-black cursor-pointer absolute right-2 top-2"
-            onClick={() => dispatch(setFocused(''))}
+            onClick={() => closeModal()}
           />
-          {focused === 'repair' ? <RepairOrder /> : undefined}
-          {focused === 'services' ? <ServicesOrder /> : undefined}
-          {/* {focused === 'repair' ? <RepairOrder focused={focused} /> : undefined} */}
+          {focused === 'repair' ? <RepairOrder setFormSubmitted={setFormSubmitted} /> : undefined}
+          {focused === 'services' ? (
+            <ServicesOrder setFormSubmitted={setFormSubmitted} />
+          ) : undefined}
+          {focused === 'parsing' ? <ParsingOrder setFormSubmitted={setFormSubmitted} /> : undefined}
+          {formSubmitted && <FormSentSuccess />}
         </div>
       )}
     </>

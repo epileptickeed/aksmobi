@@ -8,7 +8,7 @@ export { ModelSearch } from './model-search';
 export { ChooseYourModel } from './choose-your-model';
 export { OurServices } from './ourServices/our-services';
 export { RepairedStat } from './repaired-stat';
-export { Reviews } from './reviews';
+export { ReviewsCarousel } from './reviews-carousel';
 export { InputsComponent } from './inputs-component';
 export { FooterInfo } from './footer-info';
 export { Footer } from './footer';
